@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <style>
+      /* Estilos generales del cuerpo de la página */
+      body {
+        display: flex; /* Nos ayuda a centrar el contenido */
+        justify-content: center; /* Centra horizontalmente */
+        align-items: center; /* Centra verticalmente */
+        min-height: 100vh; /* Ocupa al menos toda la altura de la pantalla */
+        margin: 0; /* Quita márgenes por defecto */
+        background-color: #f0f2f5; /* Un color de fondo suave, parecido al de la imagen */
+        font-family: Arial, sans-serif; /* Una fuente común y legible */
+      }
+
+      /* Contenedor principal del login */
+      .login-container {
+        background-color: #ffffff; /* Fondo blanco para el recuadro del login */
+        padding: 40px; /* Espacio interno */
+        border-radius: 10px; /* Bordes redondeados */
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra suave para darle profundidad */
+        width: 320px; /* Ancho del contenedor */
+        text-align: center; /* Centra el texto dentro del contenedor */
+      }
+
+      /* Estilo para el logo (simulado con texto) */
+      .logo {
+        font-size: 28px; /* Tamaño del texto del logo */
+        font-weight: bold; /* Texto en negrita */
+        margin-bottom: 10px; /* Espacio debajo del logo */
+      }
+      .logo .com {
+        color: #6a1b9a; /* Color morado oscuro para "COM" */
+      }
+      .logo .fama {
+        color: #d81b60; /* Color rosa/magenta para "FAMA" */
+      }
+
+      /* Títulos de bienvenida */
+      .login-container h2 {
+        font-size: 20px;
+        color: #333333; /* Color de texto oscuro */
+        margin-bottom: 5px; /* Menos espacio debajo del H2 */
+      }
+
+      .login-container p {
+        font-size: 16px;
+        color: #555555; /* Color de texto un poco más claro */
+        margin-bottom: 30px; /* Espacio antes de los campos de entrada */
+      }
+
+      /* Estilo para los campos de entrada (input) */
+      .input-group {
+        margin-bottom: 20px; /* Espacio entre campos */
+        text-align: left; /* Alinea el texto del label a la izquierda */
+      }
+
+      .input-group label {
+        display: block; /* Hace que el label ocupe toda la línea */
+        margin-bottom: 5px;
+        color: #555555;
+        font-size: 14px;
+      }
+
+      .input-group input {
+        width: calc(100% - 20px); /* Ancho completo menos el padding */
+        padding: 10px;
+        border: none; /* Quitamos el borde por defecto */
+        border-bottom: 2px solid #cccccc; /* Línea inferior como en la imagen */
+        font-size: 16px;
+        outline: none; /* Quitamos el contorno azul al hacer foco (opcional) */
+      }
+
+      .input-group input:focus {
+        border-bottom-color: #7b1fa2; /* Cambia color de la línea al enfocar (morado) */
+      }
+
+      /* Estilo para el botón de Ingresar */
+      .login-button {
+        background-color: #7b1fa2; /* Color morado del botón, similar al de la imagen */
+        color: #ffffff; /* Texto blanco */
+        border: none; /* Sin borde */
+        padding: 12px 0; /* Espaciado interno (vertical, horizontal) */
+        width: 100%; /* Ancho completo */
+        border-radius: 5px; /* Bordes redondeados */
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer; /* Cambia el cursor a una manito */
+        margin-top: 10px; /* Espacio encima del botón */
+        transition: background-color 0.3s ease; /* Transición suave para el hover */
+      }
+
+      .login-button:hover {
+        background-color: #5a0f7a; /* Un morado un poco más oscuro al pasar el mouse */
+      }
+
+      /* Estilo para el enlace de "Olvidé contraseña" */
+      .forgot-password {
+        display: block; /* Para que ocupe su propia línea */
+        margin-top: 20px; /* Espacio arriba */
+        color: #888888; /* Color gris claro para el enlace */
+        font-size: 13px;
+        text-decoration: none; /* Quita el subrayado por defecto */
+      }
+
+      .forgot-password:hover {
+        text-decoration: underline; /* Subraya al pasar el mouse */
+        color: #555555;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login-container">
+      <div class="logo">
+        <span class="com">COM</span><span class="fama">FAMA</span>
+      </div>
+
+      <h2>Bienvenido</h2>
+      <p>Iniciar sección</p>
+
+      <form action="#">
+        <div class="input-group">
+          <label for="usuario">Usuario</label>
+          <input type="text" id="usuario" name="usuario" required />
+        </div>
+
+        <div class="input-group">
+          <label for="contrasena">Contraseña</label>
+          <input type="password" id="contrasena" name="contrasena" required />
+        </div>
+
+        <button type="submit" class="login-button">Ingresar</button>
+      </form>
+
+      <a href="#" class="forgot-password">¿Has olvidado la contraseña?</a>
+    </div>
+  </body>
+</html>

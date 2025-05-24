@@ -1,1 +1,581 @@
-<h1>En Construcciòn</h1>
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portafolio - Luis David Ducuara Cadavid</title>
+    <style>
+      /* --- Nueva Paleta de Colores Simplificada ---
+        Blanco: #FFFFFF / #F8F9FA (para ligeros contrastes)
+        Morado Oscuro: #1B142A (Texto principal oscuro, fondos oscuros como footer)
+        Morado Claro (Vibrante): #7441FF (Acentos principales, enlaces, botones)
+        Verde: #11EDA4 (Acentos secundarios, interactividad)
+        */
+
+      body {
+        margin: 0;
+        font-family: sans-serif;
+        background-color: #ffffff; /* Fondo principal blanco */
+        color: #1b142a; /* Texto principal morado oscuro */
+        line-height: 1.6;
+        scroll-behavior: smooth;
+      }
+
+      .container {
+        width: 90%;
+        max-width: 1100px; /* Ajustado ligeramente */
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      header {
+        background-color: #ffffff;
+        padding: 1em 0;
+        border-bottom: 2px solid #7441ff; /* Morado Claro */
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      nav .logo {
+        font-size: 1.8em;
+        font-weight: bold;
+        color: #7441ff; /* Morado Claro */
+        text-decoration: none;
+      }
+
+      nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      nav ul li {
+        margin-left: 25px;
+        margin-bottom: 5px;
+      }
+
+      nav ul li a {
+        text-decoration: none;
+        color: #1b142a; /* Texto de enlace Morado Oscuro */
+        font-weight: 500;
+        font-size: 1.05em;
+        transition: color 0.3s ease;
+      }
+
+      nav ul li a:hover,
+      nav ul li a.active {
+        color: #11eda4; /* Verde para hover o activo */
+      }
+
+      section {
+        padding: 50px 20px; /* Reducido padding vertical */
+        background-color: #ffffff;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.04); /* Sombra más sutil */
+      }
+      section:last-of-type {
+        margin-bottom: 0;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-weight: bold;
+      }
+
+      h1 {
+        /* Título principal de la página (nombre) */
+        font-size: 2.4em;
+        margin-bottom: 0.7em;
+        text-align: center;
+        color: #7441ff; /* Morado Claro */
+      }
+      h2 {
+        /* Títulos de sección */
+        font-size: 1.9em;
+        margin-bottom: 1em;
+        color: #1b142a; /* Morado Oscuro para títulos de sección */
+        border-bottom: 2px solid #11eda4; /* Verde como subrayado */
+        padding-bottom: 10px;
+        display: inline-block;
+      }
+      h3 {
+        /* Subtítulos dentro de secciones (Ej: Competencias Clave) */
+        font-size: 1.4em;
+        color: #7441ff; /* Morado Claro */
+        margin-top: 1.5em;
+        margin-bottom: 0.7em;
+      }
+
+      p {
+        font-size: 1rem;
+        color: #333; /* Un gris oscuro estándar para mejor legibilidad de párrafos largos */
+      }
+
+      /* Estilos para listas en Habilidades y Experiencias */
+      .skills-grid,
+      .software-list,
+      .languages-list {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 15px; /* Reducido gap */
+        margin-top: 15px;
+      }
+
+      .skills-grid li,
+      .software-list li,
+      .languages-list li {
+        background-color: #f8f9fa; /* Un blanco muy ligero para destacar items */
+        padding: 12px 18px;
+        border-radius: 6px;
+        border-left: 4px solid #11eda4; /* Verde */
+        font-size: 0.95em; /* Ligeramente más pequeño */
+        transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+        color: #1b142a; /* Texto morado oscuro */
+      }
+      .skills-grid li:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
+      }
+
+      .experience-item {
+        background-color: #f8f9fa;
+        padding: 20px;
+        margin-bottom: 25px;
+        border-radius: 8px;
+        border-left: 5px solid #7441ff; /* Morado Claro */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
+        color: #1b142a; /* Texto morado oscuro */
+      }
+      .experience-item:last-child {
+        margin-bottom: 0;
+      }
+      .experience-item h3 {
+        margin-top: 0;
+        color: #1b142a;
+      } /* Título del puesto en Morado Oscuro */
+      .experience-item p {
+        margin-bottom: 8px;
+        color: #333;
+      }
+      .experience-item .date-location {
+        font-style: italic;
+        color: #555;
+        font-size: 0.9em;
+        margin-bottom: 10px;
+      }
+
+      .experience-item ul {
+        list-style: none;
+        padding-left: 0;
+      }
+      .experience-item ul li {
+        margin-bottom: 8px;
+        padding-left: 20px;
+        position: relative;
+        color: #333;
+      }
+      .experience-item ul li::before {
+        content: "▹";
+        position: absolute;
+        left: 0;
+        color: #11eda4; /* Verde para el marcador */
+        font-size: 1.2em;
+        line-height: 1;
+      }
+
+      #acerca-de-mi .profile-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 25px; /* Reducido gap */
+        text-align: center;
+      }
+      @media (min-width: 768px) {
+        #acerca-de-mi .profile-content {
+          flex-direction: row;
+          align-items: flex-start;
+          text-align: left;
+        }
+      }
+
+      #acerca-de-mi .profile-image-container {
+        flex-shrink: 0;
+        max-width: 180px; /* Reducido tamaño de imagen */
+      }
+      #acerca-de-mi .profile-image {
+        width: 100%;
+        border-radius: 50%;
+        border: 5px solid #7441ff; /* Morado Claro */
+        box-shadow: 0 0 20px rgba(116, 65, 255, 0.25);
+      }
+      #acerca-de-mi .profile-text {
+        flex-grow: 1;
+      }
+      #acerca-de-mi h2 {
+        /* Saludo "¡Hola! Soy Luis David" */
+        font-size: 1.8em; /* Reducido */
+        color: #1b142a; /* Morado Oscuro */
+        border-bottom: none;
+        display: block;
+        margin-bottom: 0.5em;
+      }
+
+      /* Estilos para los botones de proyecto y marca */
+      .action-buttons {
+        text-align: center; /* Centra los botones */
+        margin-top: 30px;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 12px 25px;
+        margin: 10px;
+        font-size: 1em;
+        font-weight: 500;
+        text-decoration: none;
+        color: #ffffff; /* Texto blanco en botones */
+        border-radius: 6px;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        border: none;
+        cursor: pointer;
+      }
+
+      .btn-purple {
+        background-color: #7441ff; /* Morado Claro */
+      }
+      .btn-purple:hover {
+        background-color: #5a1fff; /* Un morado claro un poco más oscuro para hover */
+        transform: translateY(-2px);
+      }
+
+      .btn-green {
+        background-color: #11eda4; /* Verde */
+        color: #1b142a; /* Texto Morado Oscuro sobre verde para mejor contraste */
+      }
+      .btn-green:hover {
+        background-color: #0dbf8c; /* Un verde un poco más oscuro para hover */
+        transform: translateY(-2px);
+      }
+
+      .placeholder-content {
+        text-align: center;
+        font-size: 1.1em;
+        color: #555;
+        padding: 20px 15px;
+      }
+      .placeholder-content a {
+        color: #7441ff;
+        text-decoration: underline;
+      }
+      .placeholder-content a:hover {
+        color: #11eda4;
+      }
+
+      footer {
+        text-align: center;
+        padding: 25px 20px;
+        margin-top: 30px;
+        background-color: #1b142a; /* Morado Oscuro para el footer */
+        color: #f8f9fa; /* Texto blanco/gris claro en el footer */
+        font-size: 0.9em;
+      }
+      footer p {
+        margin-bottom: 5px;
+        color: #adb5bd;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="container">
+        <a href="#acerca-de-mi" class="logo">LDDC</a>
+        <ul>
+          <li><a href="#acerca-de-mi">Acerca de mí</a></li>
+          <li><a href="#habilidades">Habilidades</a></li>
+          <li><a href="#experiencias">Experiencias</a></li>
+          <li><a href="#proyectos">Proyectos</a></li>
+          <li><a href="#mi-marca">Mi Marca</a></li>
+          <li><a href="#contactos">Contactos</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section id="acerca-de-mi">
+        <div class="container">
+          <h1>Luis David Ducuara Cadavid</h1>
+          <div class="profile-content">
+            <div class="profile-image-container">
+              <img
+                src="images/fotoLuis.jpg"
+                alt="Foto de Luis David Ducuara Cadavid"
+                class="profile-image"
+              />
+            </div>
+            <div class="profile-text">
+              <h2>¡Hola! Soy Luis David</h2>
+              <p>
+                Estudiante de Ingeniería Mecatrónica. Me considero una persona
+                responsable, dinámica, proactiva y creativa, con un profundo
+                compromiso por la educación de la juventud.
+              </p>
+              <p>
+                Familiarizado con el enfoque de enseñanza STEAM dirigida al
+                aprendizaje de niños, niñas y jóvenes de una manera amena,
+                divertida y práctica. Soy una persona emprendedora y
+                perseverante, con alta capacidad de adaptación y trabajo en
+                equipo. Adoro los retos y siempre estoy en constante
+                aprendizaje.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="habilidades">
+        <div class="container">
+          <h2>Habilidades</h2>
+          <h3>Competencias Clave</h3>
+          <ul class="skills-grid">
+            <li>Liderazgo y manejo de grupos</li>
+            <li>Compromiso</li>
+            <li>Pensamiento creativo</li>
+            <li>Manejo herramientas digitales</li>
+            <li>Capacidad de escucha</li>
+            <li>Proactividad</li>
+            <li>Empatía</li>
+          </ul>
+          <h3>Software</h3>
+          <ul class="software-list skills-grid">
+            <li>Adobe Illustrator</li>
+            <li>Adobe Premier Pro</li>
+            <li>Autodesk Inventor CAD 3D</li>
+            <li>SketchUp</li>
+          </ul>
+          <h3>Idiomas</h3>
+          <ul class="languages-list skills-grid">
+            <li>Castellano (Nativo)</li>
+            <li>Inglés (Nivel Intermedio)</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="experiencias">
+        <div class="container">
+          <h2>Experiencia Laboral y Académica</h2>
+          <h3>Experiencia Laboral</h3>
+          <div class="experience-item">
+            <h3>Director y Profesor</h3>
+            <p><strong>Consolidaridad Asociación Mutual</strong></p>
+            <p class="date-location">
+              Noviembre 2020 - Junio 2021 | Medellín, Girardota y Rionegro
+            </p>
+            <ul>
+              <li>Curso de robótica para niños (Otto).</li>
+              <li>Curso de robótica para jóvenes (robot futbolista).</li>
+              <li>Taller lúdico-creativo (alcancía robótica).</li>
+            </ul>
+          </div>
+          <div class="experience-item">
+            <h3>Director y Profesor</h3>
+            <p><strong>Milenio Fondo de Empleados</strong></p>
+            <p class="date-location">Abril 2022 | Medellín, Antioquia</p>
+            <ul>
+              <li>Taller lúdico-creativo (alcancía robótica).</li>
+            </ul>
+          </div>
+          <div class="experience-item">
+            <h3>Director y Profesor</h3>
+            <p><strong>Amar Asociación Mutual</strong></p>
+            <p class="date-location">Abril 2022 | Medellín, Antioquia</p>
+            <ul>
+              <li>Taller lúdico-creativo (alcancía robótica).</li>
+            </ul>
+          </div>
+
+          <h3>Historial Académico</h3>
+          <div class="experience-item">
+            <h3>Ingeniería Mecatrónica</h3>
+            <p><strong>INSTITUCIÓN UNIVERSITARIA ITM</strong></p>
+            <p class="date-location">Enero 2020 – Actualmente | Medellín</p>
+          </div>
+          <div class="experience-item">
+            <h3>Cursos Especiales</h3>
+            <p><strong>TECNOACADEMIA SENA</strong> | Medellín</p>
+            <ul>
+              <li>
+                Aplicación de herramientas metodológicas en investigación
+                (2018).
+              </li>
+              <li>Herramientas para la gestión de proyectos (2018).</li>
+              <li>Elaborar circuitos electrónicos (2019).</li>
+              <li>
+                Análisis de datos empleando estadística descriptiva (2019).
+              </li>
+              <li>Diseño y construcción de prototipos (2021).</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="proyectos">
+        <div class="container">
+          <h2>Mis Proyectos</h2>
+          <p style="text-align: center">
+            Aquí puedes ver algunos de los proyectos en los que he trabajado o
+            que he desarrollado.
+          </p>
+          <div class="action-buttons">
+            <a href="login.html" target="_blank" class="btn btn-purple"
+              >Login</a
+            >
+            <a href="motos.html" target="_blank" class="btn btn-green"
+              >Página Web Motos</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <section id="mi-marca">
+        <div class="container">
+          <h2>Mi Marca Personal</h2>
+          <p style="text-align: center">
+            "Ingeniot" representa mi enfoque hacia la innovación y la tecnología
+            con un propósito.
+          </p>
+          <div class="action-buttons">
+            <a href="ingeniot.html" target="_blank" class="btn btn-purple"
+              >Conoce Ingeniot</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <section id="contactos">
+        <div class="container">
+          <h2>Contactos</h2>
+          <div class="placeholder-content">
+            <p>¡Hablemos! Encuéntrame aquí:</p>
+            <p>
+              Email:
+              <a href="mailto:Luisdavidducuara6984@gmail.com"
+                >Luisdavidducuara6984@gmail.com</a
+              >
+            </p>
+            <p>Teléfono: <a href="tel:+573004101147">+57 300 410 11 47</a></p>
+            <p>Ubicación: Medellín - Colombia</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>
+          &copy;
+          <script>
+            document.write(new Date().getFullYear());
+          </script>
+          Luis David Ducuara Cadavid. Todos los derechos reservados.
+        </p>
+        <p>Portafolio creado con dedicación.</p>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const navLinks = document.querySelectorAll("nav ul li a");
+        const sections = document.querySelectorAll("main section");
+        let currentHash = window.location.hash;
+
+        function setActiveLink() {
+          let scrollPosition =
+            window.pageYOffset || document.documentElement.scrollTop;
+          let activeSectionId = "";
+
+          if (currentHash && document.querySelector(currentHash)) {
+            // Verifica que el selector del hash sea válido
+            activeSectionId = currentHash;
+          } else {
+            sections.forEach((section) => {
+              if (section.offsetParent !== null) {
+                // Asegura que la sección es visible/parte del layout
+                const sectionTop = section.offsetTop - 75; // Ajuste por header fijo y un pequeño margen
+                const sectionBottom = sectionTop + section.offsetHeight;
+                if (
+                  scrollPosition >= sectionTop &&
+                  scrollPosition < sectionBottom
+                ) {
+                  activeSectionId = "#" + section.getAttribute("id");
+                }
+              }
+            });
+            if (!activeSectionId && navLinks.length > 0) {
+              if (scrollPosition < sections[0].offsetTop - 75) {
+                activeSectionId = navLinks[0].getAttribute("href");
+              } else if (
+                window.innerHeight + scrollPosition >=
+                document.body.offsetHeight - 50
+              ) {
+                activeSectionId =
+                  navLinks[navLinks.length - 1].getAttribute("href");
+              }
+            }
+          }
+
+          navLinks.forEach((link) => {
+            link.classList.remove("active");
+            if (link.getAttribute("href") === activeSectionId) {
+              link.classList.add("active");
+            }
+          });
+
+          if (currentHash) {
+            currentHash = null;
+          }
+        }
+
+        setActiveLink();
+        window.addEventListener("scroll", setActiveLink);
+
+        navLinks.forEach((link) => {
+          link.addEventListener("click", function (event) {
+            const targetId = this.getAttribute("href");
+            if (targetId.startsWith("#")) {
+              // Solo para enlaces internos
+              currentHash = targetId;
+              // No necesitamos setActiveLink() aquí inmediatamente si scroll-behavior es smooth,
+              // el evento de scroll se encargará. Pero si queremos respuesta instantánea:
+              setTimeout(setActiveLink, 0);
+            }
+            // Para enlaces externos (que no empiezan con #), el navegador se encargará.
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
